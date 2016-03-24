@@ -7,8 +7,8 @@ Created on Wed Mar 23 12:26:32 2016
 import pandas as pd
 
 #https://oege.ie.hva.nl/phpmyadmin/ om data te doen
-data = pd.read_csv('C:\\Users\\Gebruiker\\Documents\\GitHub\\CF4\\chatgood.csv',sep=";",engine="python")
-data2 = pd.read_csv('C:\\Users\\Gebruiker\\Documents\\GitHub\\CF4\\chat2.csv',sep=";",engine="python")
+data = pd.read_csv('C:\\Users\\Gebruiker\\Documents\\GitHub\\CF4\\chatlogs\\chatgood.csv',sep=";",engine="python")
+data2 = pd.read_csv('C:\\Users\\Gebruiker\\Documents\\GitHub\\CF4\\chatlogs\\chat2.csv',sep=";",engine="python")
 #
 data.columns = ['A','B','C','D','chat','F','G']
 chat = data['chat'].str.lower().str.split().tolist()
@@ -43,11 +43,11 @@ def remove_punctuation(data):
 chat2 = remove_punctuation(chat2)     
 chat = remove_punctuation(chat)
 
-bad_words_english = pd.read_csv('C:\\Users\\Gebruiker\\Documents\\GitHub\\CF4\\bad_words_english.txt',sep="/n",engine='python')
+bad_words_english = pd.read_csv('C:\\Users\\Gebruiker\\Documents\\GitHub\\CF4\\badwordslists\\bad_words_english.txt',sep="/n",engine='python')
 bad_words = bad_words_english['label'].tolist()
-bad_words_dutch = pd.read_csv('C:\\Users\\Gebruiker\\Documents\\GitHub\\CF4\\bad_words_dutch.txt',sep="/n",engine='python')
+bad_words_dutch = pd.read_csv('C:\\Users\\Gebruiker\\Documents\\GitHub\\CF4\\badwordslists\\bad_words_dutch.txt',sep="/n",engine='python')
 bad_words.append("idiot")
-bad_words_french = pd.read_csv('C:\\Users\\Gebruiker\\Documents\\GitHub\\CF4\\bad_words_french.txt',sep='/n',engine='python')
+bad_words_french = pd.read_csv('C:\\Users\\Gebruiker\\Documents\\GitHub\\CF4\\badwordslists\\bad_words_french.txt',sep='/n',engine='python')
 bad_words = bad_words + bad_words_french['label'].tolist() + bad_words_dutch['label'].tolist()
 
 def labelword(zin):
