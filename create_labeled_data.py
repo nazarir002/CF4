@@ -17,7 +17,6 @@ chat2 = data2['chat'].str.lower().str.split().tolist()
 
 import string
 
-
 def cleanseword(word):
     returnword = []
     for char in word:
@@ -52,10 +51,10 @@ bad_words_french = pd.read_csv('C:\\Users\\Gebruiker\\Documents\\GitHub\\CF4\\ba
 bad_words = bad_words + bad_words_french['label'].tolist() + bad_words_dutch['label'].tolist()
 
 def labelword(zin):
-    string = ["POSITIVE"]
+    string = "POSITIVE"
     for word in zin:
         if word in bad_words:
-            string[0] = "NEGATIVE"
+            string = "NEGATIVE"
     return string
 
 def labelwords(data):
@@ -81,6 +80,13 @@ feature = df_chat.Value
 label = df_chat.Label
 
 featuresets = [(label, feature)for index, (label, feature) in df_chat.iterrows()]
+
+neg = 0
+for item in chatlabels:
+    if item=="NEGATIVE":
+        neg+=1
+    
+print(str(neg)+"out of: "+str(len(chatlabels)))
 
 import pickle
 
