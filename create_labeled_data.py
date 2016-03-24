@@ -90,4 +90,4 @@ print(str(neg)+"out of: "+str(len(chatlabels)))
 
 import pickle
 
-pickle.dump(featuresets, open( "labeleddata.p", "wb" ))
+pickle.dump(featuresets, open( "labeleddata0-10000.p", "wb" ))
