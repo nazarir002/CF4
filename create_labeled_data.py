@@ -51,27 +51,6 @@ bad_words.append("idiot")
 bad_words_french = pd.read_csv('C:\\Users\\Gebruiker\\Documents\\Python Scripts\\bad_words_french.txt',sep='/n',engine='python')
 bad_words = bad_words + bad_words_french['label'].tolist() + bad_words_dutch['label'].tolist()
 
-
-def cleanword(zin):
-    bad = []
-    for word in zin:
-        if word in bad_words:
-            bad.append(word)
-    return bad
-
-def removewords(data):
-    allbad = []    
-    for zin in data:
-        if zin in bad_words:
-            allbad.append(zin)
-        else:
-            zin2 = cleanword(zin)
-            allbad.append(zin2)
-    return allbad
-    
-badchat = removewords(chat2)
-badchat2 = removewords(chat)
-
 def labelword(zin):
     string = ["POSITIVE"]
     for word in zin:
@@ -92,15 +71,17 @@ def labelwords(data):
 chatlabels = labelwords(chat)
 chat2labels = labelwords(chat2)
 
+valueseries = pd.Series(chat)
+df_chat = valueseries.to_frame()
+df_chat.columns = ['Value']
+df_chat['Label'] = pd.Series(chatlabels, index= df_chat.index)
 
-def remove_emptystring(data):
-    noempty= []
-    for zin in data:
-        for word in zin:
-            if word != '':
-                noempty.append(zin)
-    return noempty
-    
-badchat = remove_emptystring(badchat)
-badchat2 = remove_emptystring(badchat2)
+feature = df_chat.Value
 
+label = df_chat.Label
+
+featuresets = [(label, feature)for index, (label, feature) in df_chat.iterrows()]
+
+import pickle
+
+pickle.dump(featuresets, open( "labeleddata.p", "wb" ))
