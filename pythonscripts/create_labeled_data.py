@@ -60,7 +60,9 @@ def labelword(zin):
 def labelwords(data):
     allbad = []
     for zin in data:
-        if zin in bad_words:
+        if ''.join(zin) in bad_words:
+            allbad.append("NEGATIVE")
+        elif ' '.join(zin) in bad_words:
             allbad.append("NEGATIVE")
         else:
             zin2 = labelword(zin)
@@ -86,7 +88,7 @@ for item in chatlabels:
     if item=="NEGATIVE":
         neg+=1
     
-print(str(neg)+"out of: "+str(len(chatlabels)))
+print(str(neg)+" out of: "+str(len(chatlabels))+" lines contain foul language")
 
 import pickle
 
