@@ -346,7 +346,6 @@ beddepisser
 beeldenstormer
 bengel
 bengelende piemel pik
-beer
 beers
 beerputworm
 bef
@@ -3100,8 +3099,8 @@ uitgedroog theezakje
 uitdebaa moedergeruckte tietvlieg
 uit de baarmoeder gerukt apenjong
 uitde baarmoeder gerukte kut komkommer
-uit-de-baarmoedergerukte-tepelslet
-uitdebaarmoeder-gerukte-vliegenzwam
+uit de baarmoedergerukte tepelslet
+uit de baarmoeder gerukte vliegenzwam
 uit de naadgerukte pleeborstel
 uitgepoepte bananensplit
 uitgepoepte hoerendrol
@@ -3126,8 +3125,7 @@ vaginale afscheiding
 vaginalehangflapper
 valappel
 valse noot
-vampier
-van de baarmoeder afgerukte -tietloze cabaretslet
+van de baarmoeder afgerukte tietloze cabaretslet
 van de potgerukte... 
 vandaal
 varken
@@ -3181,7 +3179,6 @@ vleesbeest
 vleesklak
 vleespet
 vleeswortel
-
 vlegel
 vlek
 vlerk
@@ -3308,7 +3305,6 @@ zaadvrager
 zaadvragende-budcontainer
 zaadvreter
 zadelruiker
-zak
 zakcel 
 zaksel
 zalf
@@ -3381,7 +3377,7 @@ zuigkonijn
 zuigoffer
 zuigsnor
 zuigslet
-(je) zuigt 
+je zuigt 
 zuigvis
 zulletje
 zulthoofd

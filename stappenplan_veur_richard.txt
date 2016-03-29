@@ -1,0 +1,25 @@
+Stap 6 is belangrijk!
+
+1	Open create-labeled-data.py, bovenaan staat in een comment de site van de curvedata.
+
+2	wachtwoord en username heb je in je mail gehad van Frank een tijdje gelee
+
+3	klik op bigdata database (aan de zijkant de toplegenda werkt niet ofso..)
+
+4	Exporteer chatdata. KIJKUIT zet Export methode: op Uitgebreid en selecteer een aantal rijen. 
+	BEGIN vanaf 10.000 want alles daarvoor is al geweest
+
+5	Verander in create_labeled_data.py (open dit in Spyder) de directory van pd.read_csv zodat hij 
+	jouw nieuwe file ophaalt.
+
+6	!!!!belangrijk!!!!!
+	helemaal onderaan create_labeled_data.py moet je in regel 95
+	bij file = open("labeleddata0-10000","wb") 0-1000 veranderen in 10000-hoever je gegaan bent met importeren.
+
+7	Rechts in Spyder kun je de Variabele Explorer openen, open deze.
+
+8	Scroll door de variabales heen en dubbelklik op featuresets. 
+
+9	Scroll door alle items van featureset heen en als je een zin met een scheldwoord tegenkomt
+	die toch als positief is gelabeled dan voeg je het scheldwoord toe aan een bad_words.txt bestand
+	te vinden in de github directory

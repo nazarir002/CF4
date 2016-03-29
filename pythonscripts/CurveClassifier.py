@@ -46,6 +46,8 @@ for complaint in test_set:
     predictCategory = str(classifier.classify(extract_features(testComplaint)))
     if (predictCategory == category):
         correctPrediction+=1
+    else:
+        print(complaint)
     results.append(predictCategory+','+str(category))   
 
 print('Result = ' + str(correctPrediction) +'/' +str(len(test_set))+'\t'+str((correctPrediction/len(test_set))*100)+'%')
