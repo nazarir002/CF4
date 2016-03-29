@@ -92,6 +92,6 @@ print(str(neg)+" out of: "+str(len(chatlabels))+" lines contain foul language")
 
 import pickle
 
-file = open( "labeleddata0-10000.p", "wb" )
-pickle.dump(featuresets, file)
+file = open( "labeleddata.p", "wb" )
+pickle.dump([featuresets], file)
 file.close()
